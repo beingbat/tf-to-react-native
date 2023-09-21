@@ -54,7 +54,7 @@ const preprocessImage = (img: tf.Tensor3D, imageSize: number) => {
 
   // const offset = tf.scalar(127.5);
   // const normalized = imageTensor.sub(offset).div(offset);
-  const normalized = imageTensor;
+  const normalized = imageTensor.div(255.0);
   const preProcessedImage = normalized.reshape([1, imageSize, imageSize, 3]);
   return preProcessedImage;
 
