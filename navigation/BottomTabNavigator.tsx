@@ -34,13 +34,13 @@ export default function BottomTabNavigator() {
           tabBarIcon: ({ color }) => <TabBarIcon color={color} name={Platform.OS === 'ios' ? 'ios-information' : 'md-information'} />,
         }}
       />
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="Debug"
         component={TabDebugNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon color={color} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />,
         }}
-      />
+      /> */}
     </BottomTab.Navigator>
   );
 }

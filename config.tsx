@@ -1,27 +1,21 @@
-const AppConfig = 
+const AppConfig =
 
 {
-    title : "Food Classifier"
-    ,description: `
+    title: "Malaria Test Classifier"
+    , description: `
     
-This mobile app was developed by 
-- [Nidhin Pattaniyil](https://npatta01.github.io)
-- [Reshama Shaikh](https://reshamas.github.io/)
+This mobile app is developed by 
+- [Arsalan Malek](https://github.com/beingbat)
 
-This app lets you submit a photo of food and returns the predicted food category. 🍕
+This app lets you submit a photo of malaria cell and returns the predicted cell category.
 
-The model was developed using the [Food-101 dataset](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) and TensorFlow 2.3.0.
-    
-This is a Manning [liveProject](https://liveproject.manning.com).
-
-Notes:  
-- Time to inference will vary by user as it is dependent on the hardware.  
+The model was developed using the [Malaria Cell Image Dataset](https://www.kaggle.com/datasets/iarunava/cell-images-for-detecting-malaria) and TensorFlow 2.
     `
-    ,imageSize :224
-    ,topK:3 
-    ,precision:2
+    , imageSize: 50
+    , topK: 1
+    , precision: 2
 
 };
 
 
-export {AppConfig}
+export { AppConfig }
