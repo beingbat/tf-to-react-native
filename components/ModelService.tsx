@@ -93,9 +93,9 @@ export class ModelService {
   static async create(imageSize: number) {
     if (!ModelService.instance) {
       await tf.ready();
-      const modelJSON = require('../assets/model_tfjs/model.json');
-      const modelWeights = require('../assets/model_tfjs/group1-shard1of1.bin');
-      const model_classes = require("../assets/model_tfjs/classes.json")
+      const modelJSON = require('../assets/tfjs-classifier/model.json');
+      const modelWeights = require('../assets/tfjs-classifier/final-shard.bin');
+      const model_classes = require("../assets/tfjs-classifier/classes.json")
 
       const model = await tf.loadGraphModel(bundleResourceIO(modelJSON, modelWeights));
       model.predict(tf.zeros([1, imageSize, imageSize, 3]));
