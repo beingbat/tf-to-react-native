@@ -1,64 +1,88 @@
 # deploying-mobile-app
 
-This is a slightly modfied code from original project. Also updated the readme to make it more suitable for absolute beginners to react native. 
 
 ## About
 
-This repo shows how to convert model from tensorflow to tensorflow.js and then use react native to deploy on mobile apps. 
+This is a sample template repo showing how to use tensorflow.js with react native. 
 
 Here is the app in action.
 
 ![In Action](demo/app_in_action.gif)
 
 
-## Setup for non-react users
 
-You'll need to have a model in tensorflow (it could be in tf api or keras api), and need to convert into tensorflowjs, so it works without python on the edge device.
+## Assumptions
 
-**Since this project was created with versions that I am not aware of, I have used the latest versions which I can find for tf and react-native environments.**
+In order to use this repo, you need to have a tfjs model. You can get a smaple artifact from this repo's release. 
 
-### Environment for Tensforflow
-I have tested with the following environment:
-- python            3.11
-- tensorflow        2.13.0
-- tensflowjs        4.11.0
+Please download it from this repos's release and place the contents in `assets/model_tfjs`
 
-### Converting Tensorflow (Keras API) model into TensorflowJS:
-- create a model (of type `keras.models.*`)
-- save it on disk using: `model.save("path/name.h5")`
--   convert the saved model using tensorflowjs:  
 ```
-    tensorflowjs_converter \        
-    --input_format=keras \
-    --output_format=tfjs_graph_model \
-    --split_weights_by_layer \
-    --weight_shard_size_bytes=99999999 \
-    --quantize_float16="*" \
-    [input tensorflow model file path] [output tfjs model folder path]
+(base) deploying-mobile-app % tree assets/model_tfjs 
+assets/model_tfjs
+├── classes.json
+├── classes.txt
+├── group1-shard1of1.bin
+└── model.json
 ```
 
-To reduce model runtime (and size), it is 16 bit quanitzed.   
+If you want to bring in your own model, please use a command like below to convert a keras h5 artifact.
+
+The below command converts `artifacts/model_tf_keras.h5` to  tfjs and saves it to `artifacts/model_tfjs`.
+
+The model is also 16 bit quanitzed.   
 The model is converted to `tfjs_graph_model` which is an optimized version of the graph.
 The model is broken into 100MB shards.
 
-After getting model in tfjs, next step is to setup react native environment. For this you'll need to install nodejs as server-side Javascript runtime to compile the code. The original author of this project used yarn as package manager for node. Which should also be installed. Finally, you'll need expo to run this app. According to react native docs, expo includes set of tools built around react native which can developing app in minutes. It can help run the app on emulator or phone (on same network).
+```
+pip install tensorflowjs==2.3.0
 
-### Environment for ReactNative
-I have tested with the following environment:
-- nodejs v18.18.0 (You'll need to download it from their website and then install it)
+tensorflowjs_converter \
+--input_format=keras \
+--output_format=tfjs_graph_model \
+--split_weights_by_layer \
+--weight_shard_size_bytes=99999999 \ 
+--quantize_float16=* \
+artifacts/model_tf_keras.h5 artifacts/model_tfjs
+```
 
-After installing nodejs. Clone this project and navigate into it in terminal. and install yarn using commands:
-- `corepack enable`
-- `yarn init -2`
-- `yarn set version stable`
-- `yarn install`
 
-Since the nodejs and yarn versions are newer, we need to update the project packages. Use the following commands for that:
-- `yarn add expo-cli`
-- `expo upgrade`
-- `yarn start`
 
-If any of these commands don't work, write `sudo ` before these commands.
+## Running 
+
+
+```
+yarn global add expo-cli    
+
+# you can open iOS, Android, or web from here, or run them directly with the commands below.
+yarn start 
+
+# you can open in android simulator or device driectly
+yarn android 
+
+# you can open in ios simulator or device directly
+yarn ios
+
+
+```
+
+
+
+
+## Future
+
+In the future, it is possible that packages may be out of date.
+
+The below upgrade will upgrade expo and its dependencies
+```
+expo upgrade
+```
+
+The below command command can be used to interactively update  dependencies.
+
+```
+yarn upgrade-interactive       
+```
 
 ## Other
 
