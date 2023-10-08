@@ -28,8 +28,7 @@ I have tested with the following environment:
 - save it on disk using: `model.save("path/name.h5")`
 -   convert the saved model using tensorflowjs:  
 ```
-    tensorflowjs_converter \        
-    --input_format=keras \
+tensorflowjs_converter  --input_format=keras \
     --output_format=tfjs_graph_model \
     --split_weights_by_layer \
     --weight_shard_size_bytes=99999999 \
