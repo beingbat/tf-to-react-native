@@ -18,7 +18,12 @@ export default {
           },
           TabDebug: {
             screens: {
-              DebugScreen: 'three',
+              DebugScreen: 'four',
+            },
+          },
+          TabDrug: {
+            screens: {
+              DrugScreen: 'three',
             },
           },
         },
