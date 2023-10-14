@@ -1,7 +1,7 @@
 const AppConfig =
 
 {
-    title: "Malaria Test Classifier"
+    title: "Select / Take an Image to Predict"
     , description: `
     
 This mobile app is developed by 

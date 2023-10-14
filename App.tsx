@@ -7,24 +7,25 @@ import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 import { Button, ThemeProvider } from 'react-native-elements';
 
-
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
+
+
 
   if (!isLoadingComplete) {
     return null;
   } else {
     return (
       <SafeAreaProvider>
-            <ThemeProvider>
+        <ThemeProvider>
 
           <Navigation colorScheme={colorScheme} />
           <StatusBar />
-          </ThemeProvider>
+        </ThemeProvider>
 
       </SafeAreaProvider>
-      
+
     );
   }
 }

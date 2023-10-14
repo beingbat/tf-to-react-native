@@ -8,8 +8,9 @@ This repo shows how to convert model from tensorflow to tensorflow.js and then u
 
 Here is the app in action.
 
-![In Action](demo/app_in_action.gif)
-
+<video width="320" height="580" controls style="object-fit: cover;">
+  <source src="demo/app_in_action.mp4" type="video/mp4">
+</video>
 
 ## Setup for non-react users
 
@@ -58,6 +59,10 @@ Since the nodejs and yarn versions are newer, we need to update the project pack
 - `yarn start`
 
 If any of these commands don't work, write `sudo ` before these commands.
+
+## Note
+
+Originally I was planning of using detector instead of classifier, but certain layers like nms have limited support or cause problems during conversion, after multiple failed tries, I decided to go with classifier only.
 
 ## Other
 

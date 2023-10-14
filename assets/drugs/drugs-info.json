@@ -1,0 +1,19 @@
+{
+    "drugs": [
+        {
+            "name": "Drug Name 1",
+            "description": "Description of Drug 1 goes here...",
+            "url": "https://example.com/drug1"
+        },
+        {
+            "name": "Drug Name 2",
+            "description": "Description of Drug 2 goes here...",
+            "url": "https://example.com/drug2"
+        },
+        {
+            "name": "Drug Name 3",
+            "description": "Description of Drug 3 goes here...",
+            "url": "https://example.com/drug3"
+        }
+    ]
+}

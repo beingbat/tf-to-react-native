@@ -8,8 +8,10 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import HomeScreen from '../screens/HomeScreen';
 import AboutScreen from '../screens/AboutScreen';
-import DebugScreen from '../screens/DebugScreen';
-import { BottomTabParamList, HomeParamList, AboutParamList, DebugParamList } from '../types';
+import DietScreen from '../screens/DietScreen';
+import DrugsScreen from '../screens/DrugScreen';
+import HistoryScreen from '../screens/HistoryScreen';
+import { BottomTabParamList, HomeParamList, AboutParamList, HistoryParamList, DrugsParamList, DietParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -21,26 +23,41 @@ export default function BottomTabNavigator() {
       initialRouteName="Home"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="Home"
+        name="Detect"
         component={HomeNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon color={color} name={Platform.OS === 'ios' ? 'ios-home' : 'md-home'} />,
+          tabBarIcon: ({ color }) => <TabBarIcon color={color} name={Platform.OS === 'ios' ? 'ios-camera' : 'md-camera'} />,
         }}
       />
       <BottomTab.Screen
         name="About"
         component={TabAboutNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon color={color} name={Platform.OS === 'ios' ? 'ios-information' : 'md-information'} />,
+          tabBarIcon: ({ color }) => <TabBarIcon color={color} name={Platform.OS === 'ios' ? 'ios-medkit' : 'md-medkit'} />,
         }}
       />
-      {/* <BottomTab.Screen
-        name="Debug"
-        component={TabDebugNavigator}
+      <BottomTab.Screen
+        name="Medication"
+        component={TabDrugsNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon color={color} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />,
+          tabBarIcon: ({ color }) => <TabBarIcon color={color} name={Platform.OS === 'ios' ? 'ios-medical' : 'md-medical'} />,
         }}
-      /> */}
+      />
+      <BottomTab.Screen
+        name="Diet Guide"
+        component={TabDietNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon color={color} name={Platform.OS === 'ios' ? 'ios-fast-food' : 'md-fast-food'} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="History"
+        component={TabHistoryNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon color={color} name={Platform.OS === 'ios' ? 'ios-time' : 'md-time'} />,
+        }}
+      />
+
     </BottomTab.Navigator>
   );
 }
@@ -61,7 +78,7 @@ function HomeNavigator() {
       <HomeStack.Screen
         name="HomeScreen"
         component={HomeScreen}
-        options={{ headerTitle: 'Home' }}
+        options={{ headerTitle: 'Predict Malaria' }}
       />
     </HomeStack.Navigator>
   );
@@ -75,22 +92,53 @@ function TabAboutNavigator() {
       <AboutTabStack.Screen
         name="AboutScreen"
         component={AboutScreen}
-        options={{ headerTitle: 'About' }}
+        options={{ headerTitle: 'Malaria Information' }}
       />
     </AboutTabStack.Navigator>
   );
 }
 
-const DebugTabStack = createStackNavigator<DebugParamList>();
+const DietTabStack = createStackNavigator<DietParamList>();
 
-function TabDebugNavigator() {
+function TabDietNavigator() {
   return (
-    <DebugTabStack.Navigator>
-      <DebugTabStack.Screen
-        name="DebugScreen"
-        component={DebugScreen}
-        options={{ headerTitle: 'Debug' }}
+    <DietTabStack.Navigator>
+      <DietTabStack.Screen
+        name="DietScreen"
+        component={DietScreen}
+        options={{ headerTitle: 'Diet for Malaria Patients' }}
       />
-    </DebugTabStack.Navigator>
+    </DietTabStack.Navigator>
+  );
+}
+
+
+const HistoryTabStack = createStackNavigator<HistoryParamList>();
+
+function TabHistoryNavigator() {
+  return (
+    <HistoryTabStack.Navigator>
+      <HistoryTabStack.Screen
+        name="HistoryScreen"
+        component={HistoryScreen}
+        options={{
+          headerTitle: 'Patients Record'
+        }}
+      />
+    </HistoryTabStack.Navigator>
+  );
+}
+
+const DrugsTabStack = createStackNavigator<DrugsParamList>();
+
+function TabDrugsNavigator() {
+  return (
+    <DrugsTabStack.Navigator>
+      <DrugsTabStack.Screen
+        name="DrugsScreen"
+        component={DrugsScreen}
+        options={{ headerTitle: 'Recommended Medication' }}
+      />
+    </DrugsTabStack.Navigator>
   );
 }
