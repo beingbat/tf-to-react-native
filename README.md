@@ -8,7 +8,7 @@ This repo shows how to convert model from tensorflow to tensorflow.js and then u
 
 Here is the app in action.
 
-![In Action]([demo/app_in_action.mp4](https://github.com/beingbat/tf-to-react-native/assets/46645220/ca3a7cfc-e4e8-49a2-9a94-d0b27a2a0207))
+![In Action](https://github.com/beingbat/tf-to-react-native/assets/46645220/ca3a7cfc-e4e8-49a2-9a94-d0b27a2a0207)
 
 
 ## Setup for non-react users
