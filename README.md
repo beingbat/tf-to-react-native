@@ -8,6 +8,10 @@ This repo shows how to convert model from tensorflow to tensorflow.js and then u
 
 Here is the app in action.
 
+
+https://github.com/beingbat/tf-to-react-native/assets/46645220/1029b5f6-f196-4734-9483-0ff09dc65fa4
+
+
 <video width="320" height="580" controls style="object-fit: cover;">
   <source src="demo/app_in_action.mp4" type="video/mp4">
 </video>
