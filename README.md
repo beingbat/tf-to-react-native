@@ -8,7 +8,7 @@ This repo shows how to convert model from tensorflow to tensorflow.js and then u
 
 Here is the app in action.
 
-![In Action](demo/app_in_action.gif)
+![In Action](demo/app_in_action.mp4)
 
 
 ## Setup for non-react users
