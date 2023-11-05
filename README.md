@@ -52,14 +52,16 @@ I have tested with the following environment:
 - nodejs v18.18.0 (You'll need to download it from their website and then install it)
 
 After installing nodejs. Clone this project and navigate into it in terminal. and install yarn using commands:
+(Delete node_modules folder if present)
 - `corepack enable`
 - `yarn init -2`
 - `yarn set version stable`
 - `yarn install`
 
 Since the nodejs and yarn versions are newer, we need to update the project packages. Use the following commands for that:
-- `yarn add expo-cli`
+- `yarn add expo expo-cli`
 - `expo upgrade`
+- `npx expo install --fix`
 - `yarn start`
 
 If any of these commands don't work, write `sudo ` before these commands.
