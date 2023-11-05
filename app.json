@@ -1,6 +1,7 @@
 {
   "expo": {
-    "name": "mobile-app",
+    "name": "malaria-classifier",
+    "description": "app to classify cell images as infected or uninfected with malaria",
     "slug": "mobile-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,7 +22,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.beingbat.mobileapp"
+      "bundleIdentifier": "com.beingbat.malariaclassifier"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
@@ -35,7 +36,7 @@
       "policy": "appVersion"
     },
     "android": {
-      "package": "com.beingbat.mobileapp"
+      "package": "com.beingbat.malariaclassifier"
     }
   }
 }
