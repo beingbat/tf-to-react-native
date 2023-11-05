@@ -64,6 +64,16 @@ Since the nodejs and yarn versions are newer, we need to update the project pack
 - `npx expo install --fix`
 - `yarn start`
 
+Then manually add all the packages that the project uses:
+
+- `yarn add [name of the package1 in import] [name of the package2 in import] [and so on]`
+
+Install specifc versions for tfjs:
+
+- `yarn add @tensorflow/tfjs@2.3.0 @tensorflow/tfjs-react-native@0.5.0`
+- `yarn add @react-native-community/async-storage`
+- `npx expo install --fix`
+
 If any of these commands don't work, write `sudo ` before these commands.
 
 ## Note
